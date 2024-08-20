@@ -1,4 +1,4 @@
-const loadPhone = async (searchText='13',isShowAll) => {
+const loadPhone = async (searchText,isShowAll) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     const data = await res.json();
     const phones = data.data;
@@ -92,7 +92,7 @@ const handleShowDetail = async(id) => {
 }
 
 const showPhoneDetails = (phone) => {
-    
+
     const showDetailContainer = document.getElementById('show-detail-container');
     showDetailContainer.innerHTML = `
     <h3 id="phone-name" class="text-3xl font-bold">${phone.name}</h3>
